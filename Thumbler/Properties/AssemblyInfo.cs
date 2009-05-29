@@ -6,11 +6,11 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Thumbler")]
-[assembly: AssemblyDescription("Thumbler - The image resizer")]
+[assembly: AssemblyDescription("Thumbler - The Image Resizer")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Tormod Fjeldskår")]
 [assembly: AssemblyProduct("Thumbler")]
-[assembly: AssemblyCopyright("Copyright Tormod Fjeldskår©  2009")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

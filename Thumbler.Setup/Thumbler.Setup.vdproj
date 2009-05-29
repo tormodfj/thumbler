@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_32053559B485DE9F16E517FE9C973E04"
+        "OwnerKey" = "8:_4C38A8012A8241D9889568368ED16EC0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_4C38A8012A8241D9889568368ED16EC0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -27,8 +33,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_FA2C45F408D6BBDD171B016468920387"
+        "MsmKey" = "8:_B9B2BECC3C79AF90F34183DEE1BC8E5E"
         "OwnerKey" = "8:_4C38A8012A8241D9889568368ED16EC0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B9B2BECC3C79AF90F34183DEE1BC8E5E"
+        "OwnerKey" = "8:_32053559B485DE9F16E517FE9C973E04"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -40,7 +52,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_FA2C45F408D6BBDD171B016468920387"
+        "OwnerKey" = "8:_32053559B485DE9F16E517FE9C973E04"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_B9B2BECC3C79AF90F34183DEE1BC8E5E"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -68,6 +86,19 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Net.Framework.3.5.SP1"
+                    {
+                    "Name" = "8:.NET Framework 3.5 SP1"
+                    "ProductCode" = "8:Microsoft.Net.Framework.3.5.SP1"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
             }
         }
         "Release"
@@ -135,6 +166,37 @@
         }
         "File"
         {
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_32053559B485DE9F16E517FE9C973E04"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.WindowsAPICodePack.Shell, Version=0.8.5.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_32053559B485DE9F16E517FE9C973E04"
+                    {
+                    "Name" = "8:Microsoft.WindowsAPICodePack.Shell.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.WindowsAPICodePack.Shell.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_648FE966909A4374B5A8A11FFE2D9D85"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AC95DCE2251648D79F7DF5E35F1AC634"
             {
             "SourcePath" = "8:Banner.bmp"
@@ -155,20 +217,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FA2C45F408D6BBDD171B016468920387"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B9B2BECC3C79AF90F34183DEE1BC8E5E"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:VistaBridgeLibrary, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Microsoft.WindowsAPICodePack, Version=0.8.5.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_FA2C45F408D6BBDD171B016468920387"
+                    "_B9B2BECC3C79AF90F34183DEE1BC8E5E"
                     {
-                    "Name" = "8:VistaBridgeLibrary.dll"
+                    "Name" = "8:Microsoft.WindowsAPICodePack.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:VistaBridgeLibrary.dll"
+            "SourcePath" = "8:Microsoft.WindowsAPICodePack.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_648FE966909A4374B5A8A11FFE2D9D85"
@@ -257,7 +319,7 @@
         "Subject" = "8:"
         "ARPCONTACT" = "8:Tormod Fjeldskår"
         "Keywords" = "8:"
-        "ARPCOMMENTS" = "8:Thumbler - The image resizer"
+        "ARPCOMMENTS" = "8:Thumbler - The Image Resizer"
         "ARPURLINFOABOUT" = "8:"
         "ARPPRODUCTICON" = "8:_4C38A8012A8241D9889568368ED16EC0"
         "ARPIconIndex" = "3:32512"
