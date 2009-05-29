@@ -8,14 +8,11 @@ namespace Thumbler.View
     /// </summary>
     public partial class MainWindow : Window
     {
-        private IImageResizerViewModel _vm;
-
         public MainWindow(IImageResizerViewModel viewModel)
         {
             InitializeComponent();
 
-            _vm = viewModel;
-            DataContext = _vm;
+            DataContext = viewModel;
         }
     }
 }
