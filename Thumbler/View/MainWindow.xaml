@@ -1,0 +1,109 @@
+﻿<Window x:Class="Thumbler.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:view="clr-namespace:Thumbler.View"
+        Height="500" Width="600" MinHeight="450" MinWidth="400"
+        Title="{Binding AppName}" ResizeMode="CanResizeWithGrip">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Photo.xaml" />
+                <ResourceDictionary Source="Cancel.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Offset="0" Color="#FCFCFF" />
+            <GradientStop Offset="1" Color="#E0E0FF" />
+        </LinearGradientBrush>
+    </Window.Background>
+    <DockPanel>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBar.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </StatusBar.ItemsPanel>
+            <StatusBarItem Grid.Column="0">
+                <Label Padding="0" Content="{Binding Status}" />
+            </StatusBarItem>
+            <StatusBarItem Grid.Column="2">
+                <ProgressBar Grid.Column="2" Height="15" Width="100" Value="{Binding Progress}" Visibility="{Binding ProgressBarVisibility}" />
+            </StatusBarItem>
+            <StatusBarItem Grid.Column="1">
+                <Button Grid.Column="1" Padding="1" Height="15" Width="15" Visibility="{Binding ProgressBarVisibility}" Command="{Binding CancelResizingCommand}">
+                    <Viewbox>
+                        <ContentControl Content="{StaticResource Cancel}"/>
+                    </Viewbox>
+                </Button>
+            </StatusBarItem>
+        </StatusBar>
+        <Separator DockPanel.Dock="Bottom"  Margin="0" />
+        <Grid Margin="5" IsEnabled="{Binding ControlsEnabled}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="40" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Label Content="Input Folder:" Grid.ColumnSpan="2" />
+            <TextBox Grid.Row="1" Margin="2" Text="{Binding SourceFolder, UpdateSourceTrigger=PropertyChanged}" />
+            <Button Content="..." Margin="2" Grid.Row="1" Grid.Column="1" Command="{Binding SetSourceFolderCommand}" />
+
+            <Label Content="Output Folder:" Grid.Row="2" Grid.ColumnSpan="2" />
+            <TextBox Grid.Row="3" Margin="2" Text="{Binding TargetFolder, UpdateSourceTrigger=PropertyChanged}"  />
+            <Button Content="..." Margin="2" Grid.Row="3" Grid.Column="1" Command="{Binding SetTargetFolderCommand}" />
+
+            <Grid Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.ColumnSpan="2" Content="Size" HorizontalAlignment="Center" />
+                <Viewbox Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2" Margin="5" Height="115" Width="150" Stretch="UniformToFill">
+                    <ContentControl Content="{StaticResource Photo}" Margin="0,-6,0,0" Focusable="False" />
+                </Viewbox>
+                <Label Grid.Row="1" Grid.Column="2" Content="Height:" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="2" />
+                <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding NewHeight}" Width="50" VerticalAlignment="Top" TextAlignment="Center" view:TextBoxBehavior.SelectAllOnFocus="true" />
+                <Label Grid.Row="3" Content="Width:" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="2" />
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding NewWidth}" Width="50" HorizontalAlignment="Left" TextAlignment="Center" view:TextBoxBehavior.SelectAllOnFocus="true" />
+                <CheckBox Grid.Row="4" Grid.ColumnSpan="3" IsChecked="{Binding PreserveAspectRatio}" Content="Preserve Aspect Ratio" Margin="5" />
+
+                <Label Grid.Column="4"  Content="Quality" HorizontalAlignment="Center" />
+                <Slider Grid.Row="1" Grid.RowSpan="2" Grid.Column="4" Value="{Binding Quality}" Orientation="Vertical" HorizontalAlignment="Center" Minimum="20" Maximum="100" TickPlacement="BottomRight" TickFrequency="10" />
+                <TextBox Grid.Row="3" Grid.Column="4" Text="{Binding Quality, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" view:TextBoxBehavior.SelectAllOnFocus="true" />
+            </Grid>
+            <Button Grid.Row="5" Grid.ColumnSpan="2" Command="{Binding ResizeImagesCommand}" Width="150" Content="Resize Images" />
+        </Grid>
+    </DockPanel>
+</Window>
