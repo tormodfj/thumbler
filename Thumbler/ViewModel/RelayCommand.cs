@@ -4,22 +4,22 @@ using System.Windows.Input;
 
 namespace Thumbler.ViewModel
 {
-    /// <summary>
-    /// From http://msdn.microsoft.com/en-us/magazine/dd419663.aspx
-    /// </summary>
-    class RelayCommand : ICommand
-    {
-        readonly Action<object> _execute;
-        readonly Predicate<object> _canExecute;
+	/// <summary>
+	/// From http://msdn.microsoft.com/en-us/magazine/dd419663.aspx
+	/// </summary>
+	class RelayCommand : ICommand
+	{
+		readonly Action<object> _execute;
+		readonly Predicate<object> _canExecute;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="RelayCommand"/> class.
 		/// </summary>
 		/// <param name="execute">The method to be called when the command is 
 		/// invoked.</param>
-        public RelayCommand(Action<object> execute)
-            : this(execute, null)
-        { }
+		public RelayCommand(Action<object> execute)
+			: this(execute, null)
+		{ }
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="RelayCommand"/> class.
@@ -28,14 +28,14 @@ namespace Thumbler.ViewModel
 		/// invoked.</param>
 		/// <param name="canExecute">the method that determines whether the command 
 		/// can execute in its current state.</param>
-        public RelayCommand(Action<object> execute, Predicate<object> canExecute)
-        {
-            if (execute == null)
-                throw new ArgumentNullException("execute");
+		public RelayCommand(Action<object> execute, Predicate<object> canExecute)
+		{
+			if (execute == null)
+				throw new ArgumentNullException("execute");
 
-            _execute = execute;
-            _canExecute = canExecute;
-        }
+			_execute = execute;
+			_canExecute = canExecute;
+		}
 
 		/// <summary>
 		/// Defines the method that determines whether the command can execute in 
@@ -46,30 +46,30 @@ namespace Thumbler.ViewModel
 		/// <returns>
 		/// true if this command can be executed; otherwise, false.
 		/// </returns>
-        [DebuggerStepThrough]
-        public bool CanExecute(object parameter)
-        {
-            return _canExecute == null ? true : _canExecute(parameter);
-        }
+		[DebuggerStepThrough]
+		public bool CanExecute(object parameter)
+		{
+			return _canExecute == null ? true : _canExecute(parameter);
+		}
 
 		/// <summary>
 		/// Occurs when changes occur that affect whether or not the command should 
 		/// execute.
 		/// </summary>
-        public event EventHandler CanExecuteChanged
-        {
-            add { CommandManager.RequerySuggested += value; }
-            remove { CommandManager.RequerySuggested -= value; }
-        }
+		public event EventHandler CanExecuteChanged
+		{
+			add { CommandManager.RequerySuggested += value; }
+			remove { CommandManager.RequerySuggested -= value; }
+		}
 
 		/// <summary>
 		/// Defines the method to be called when the command is invoked.
 		/// </summary>
 		/// <param name="parameter">Data used by the command.  If the command does 
 		/// not require data to be passed, this object can be set to null.</param>
-        public void Execute(object parameter)
-        {
-            _execute(parameter);
-        }
-    }
+		public void Execute(object parameter)
+		{
+			_execute(parameter);
+		}
+	}
 }

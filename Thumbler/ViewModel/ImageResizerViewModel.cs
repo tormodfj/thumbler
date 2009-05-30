@@ -385,7 +385,7 @@ namespace Thumbler.ViewModel
 				if (!Dialog.AskToCreateFolder(_targetFolder))
 				{
 					Dialog.ShowInformation(
-						"Operation Cancelled", 
+						"Operation Cancelled",
 						"The operation could not be completed because the output folder does not exist");
 					return false;
 				}
@@ -430,16 +430,16 @@ namespace Thumbler.ViewModel
 				if (!returnValue)
 				{
 					Dispatcher.CurrentDispatcher.Invoke(
-						new Action<string, string>(Dialog.ShowError), 
-						"Operation Aborted", 
+						new Action<string, string>(Dialog.ShowError),
+						"Operation Aborted",
 						"The operation was aborted.");
 				}
 			}
 			catch (Exception e)
 			{
 				Dispatcher.CurrentDispatcher.Invoke(
-					new Action<string,string>(Dialog.ShowError), 
-					"Error!", 
+					new Action<string, string>(Dialog.ShowError),
+					"Error!",
 					e.Message);
 			}
 			finally
