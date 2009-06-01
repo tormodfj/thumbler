@@ -10,6 +10,12 @@ namespace Thumbler.Model
 	public interface IImageResizer
 	{
 		/// <summary>
+		/// Gets the image format.
+		/// </summary>
+		/// <value>The image format.</value>
+		string ImageFormat { get; }
+
+		/// <summary>
 		/// Gets the collection of strings with the paths to the images
 		/// to be resized.
 		/// </summary>

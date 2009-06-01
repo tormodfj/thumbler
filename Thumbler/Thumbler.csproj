@@ -88,6 +88,7 @@
   <ItemGroup>
     <Compile Include="Model\FileNameColissionEventArgs.cs" />
     <Compile Include="Model\IImageResizer.cs" />
+    <Compile Include="Model\ImageResizerBase.cs" />
     <Compile Include="Model\JpegImageResizer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
