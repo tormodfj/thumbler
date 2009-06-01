@@ -10,10 +10,10 @@ namespace Thumbler.Model
 	public interface IImageResizer
 	{
 		/// <summary>
-		/// Gets the image format.
+		/// Gets the image format name.
 		/// </summary>
-		/// <value>The image format.</value>
-		string ImageFormat { get; }
+		/// <value>The image format name.</value>
+		string ImageFormatName { get; }
 
 		/// <summary>
 		/// Gets the collection of strings with the paths to the images
@@ -39,13 +39,6 @@ namespace Thumbler.Model
 		/// <value><c>true</c> if resizing preserves the aspect ratio of the 
 		/// images; otherwise, <c>false</c>.</value>
 		bool PreserveAspectRatio { get; set; }
-
-		/// <summary>
-		/// Gets or sets the quality of the resized images.
-		/// </summary>
-		/// <remarks>This property is only applicable for codecs which
-		/// takes a quality parameter, e.g. JPEG.</remarks>
-		int Quality { get; set; }
 
 		/// <summary>
 		/// Resizes the images in the <see cref="SourceFiles"/> collection.

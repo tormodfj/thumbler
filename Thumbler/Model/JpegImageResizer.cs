@@ -8,7 +8,7 @@ namespace Thumbler.Model
 	/// Class for resizing a collection of images to a specified size,
 	/// using the JPEG codec.
 	/// </summary>
-	class JpegImageResizer : ImageResizerBase
+	class JpegImageResizer : ImageResizerBase, IQualityAdjustableImageResizer
 	{
 		private static readonly ImageCodecInfo codec;
 
@@ -49,15 +49,13 @@ namespace Thumbler.Model
 		/// <summary>
 		/// Gets or sets the quality of the resized images.
 		/// </summary>
-		/// <remarks>This property is only applicable for codecs which
-		/// takes a quality parameter, e.g. JPEG.</remarks>
-		public override int Quality { get; set; }
+		public int Quality { get; set; }
 
 		/// <summary>
 		/// Gets the image format.
 		/// </summary>
 		/// <value>The image format.</value>
-		public override string ImageFormat
+		public override string ImageFormatName
 		{
 			get { return "JPEG"; }
 		}
@@ -66,6 +64,7 @@ namespace Thumbler.Model
 		/// Gets the file extension.
 		/// </summary>
 		/// <value>The file extension.</value>
+		/// <remarks>File extension does not include leading dot.</remarks>
 		protected override string FileExtension
 		{
 			get { return "jpg"; }

@@ -21,7 +21,7 @@ namespace Thumbler
 		{
 			base.OnStartup(e);
 
-			IImageResizer model = new JpegImageResizer();
+			IQualityAdjustableImageResizer model = new JpegImageResizer();
 			IImageResizerViewModel viewModel = new ImageResizerViewModel(model);
 			Window window = new MainWindow(viewModel);
 			window.Show();

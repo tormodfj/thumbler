@@ -16,7 +16,7 @@ namespace Thumbler.ViewModel
 	/// </summary>
 	public class ImageResizerViewModel : IImageResizerViewModel
 	{
-		private IImageResizer _resizer;
+		private IQualityAdjustableImageResizer _resizer;
 		private string _sourceFolder;
 		private string _targetFolder;
 		private int _quality;
@@ -282,7 +282,7 @@ namespace Thumbler.ViewModel
 		/// class.
 		/// </summary>
 		/// <param name="resizer">The resizer.</param>
-		public ImageResizerViewModel(IImageResizer resizer)
+		public ImageResizerViewModel(IQualityAdjustableImageResizer resizer)
 		{
 			_resizer = resizer;
 

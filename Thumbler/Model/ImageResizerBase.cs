@@ -220,11 +220,17 @@ namespace Thumbler.Model
 		{
 			string file = Path.Combine(TargetFolder, Path.GetFileNameWithoutExtension(sourceFile));
 			string ext = "({0})." + FileExtension;
+			string safeFile = string.Empty;
 			int counter = 1;
 
-			while (File.Exists(file + string.Format(ext, counter))) counter++;
+			do
+			{
+				safeFile = file + string.Format(ext, counter);
+				counter++;
+			}
+			while (File.Exists(safeFile));
 
-			return file + string.Format(ext, counter);
+			return safeFile;
 		}
 
 		/// <summary>
@@ -256,23 +262,16 @@ namespace Thumbler.Model
 		}
 
 		/// <summary>
-		/// Gets or sets the quality of the resized images.
-		/// </summary>
-		/// <value></value>
-		/// <remarks>This property is only applicable for codecs which
-		/// takes a quality parameter, e.g. JPEG.</remarks>
-		public abstract int Quality { get; set; }
-
-		/// <summary>
 		/// Gets the image format.
 		/// </summary>
 		/// <value>The image format.</value>
-		public abstract string ImageFormat { get; }
+		public abstract string ImageFormatName { get; }
 
 		/// <summary>
 		/// Gets the file extension.
 		/// </summary>
 		/// <value>The file extension.</value>
+		/// <remarks>File extension does not include leading dot.</remarks>
 		protected abstract string FileExtension { get; }
 
 		/// <summary>
