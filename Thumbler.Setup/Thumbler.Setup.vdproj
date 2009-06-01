@@ -88,10 +88,10 @@
             "ComponentsUrl" = "8:"
                 "Items"
                 {
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Net.Framework.3.5.SP1"
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Net.Client.3.5"
                     {
-                    "Name" = "8:.NET Framework 3.5 SP1"
-                    "ProductCode" = "8:Microsoft.Net.Framework.3.5.SP1"
+                    "Name" = "8:.NET Framework Client Profile"
+                    "ProductCode" = "8:Microsoft.Net.Client.3.5"
                     }
                     "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
                     {
@@ -160,7 +160,7 @@
                 "Message" = "8:[VSDNETMSG]"
                 "Version" = "8:3.5 SP1 Client"
                 "AllowLaterVersions" = "11:FALSE"
-                "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=76617"
+                "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=123879"
                 }
             }
         }
@@ -305,7 +305,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Thumbler"
         "ProductCode" = "8:{C1EDA13E-A575-4B58-9AC6-E003D7FE9136}"
-        "PackageCode" = "8:{E66A7822-356A-47CB-BDAE-22FF7F8CDF28}"
+        "PackageCode" = "8:{B7405507-45BA-4046-8A8B-9506820AB5C9}"
         "UpgradeCode" = "8:{97A41A62-965E-4C35-A12D-97E5CFEAFABD}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
