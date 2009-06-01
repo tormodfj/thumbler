@@ -471,7 +471,7 @@ namespace Thumbler.ViewModel
 		private void FileNameColission(object sender, FileNameCollisionEventArgs e)
 		{
 			// TODO: Ask user
-			e.Action = FileNameCollisionEventArgs.CollisionAction.Overwrite;
+			e.Action = FileNameCollisionEventArgs.CollisionAction.KeepBoth;
 		}
 	}
 }
