@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thumbler", "Thumbler\Thumbler.csproj", "{F57A5850-5ACC-4B80-B15D-8761DA237174}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Thumbler.Setup", "Thumbler.Setup\Thumbler.Setup.vdproj", "{0A2D8272-997B-49F2-B7C9-8B96741014EC}"
